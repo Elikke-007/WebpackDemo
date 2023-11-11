@@ -1,0 +1,141 @@
+:root {
+    --curve-value: cubic-bezier(.72,.04,.32,.91);
+    --width-anim-duration: 2.5s;
+}
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+.divider {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    left: calc(100% - 20px);
+}
+.girl-container {
+  position: relative;
+  height: 1080px;
+}
+.girl-div {
+  position: absolute;
+  width: 100%;
+  height: 1080px;
+  box-sizing: border-box;
+}
+.girl-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.girl-div:nth-child(1) {
+    right: 0;
+    /* width: 0%; */
+}
+.girl-div:nth-child(1) img {
+    object-position: right;
+}
+
+.girl-div:nth-child(2) {
+    /* border-right: 20px solid white; */
+    /* animation-name: changeWidth2;
+    animation-duration: var(--width-anim-duration);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: var(--curve-value); */
+}
+@keyframes changeWidth2 {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.girl-div:nth-child(1) {
+    /* animation-name: changeWidth1;
+    animation-duration: var(--width-anim-duration);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: var(--curve-value); */
+}
+@keyframes changeWidth1 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.slidecontainer {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slidecontainer > input {
+    margin: 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+  border-radius: 50%;
+}
+/* .girl {
+  aspect-ratio: 1;
+  clip-path: inset(0px 3% 0px 0px);
+  animation-name: clipLoop;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.69, 0, 0.33, 1);
+}
+.girl-container > div {
+  position: absolute;
+  width: 100%;
+  max-width: 1080px;
+  overflow: hidden;
+}
+.girl-container > div img {
+    width: 100%;
+} */
+
+@keyframes clipLoop {
+  from {
+    clip-path: inset(0px 3% 0px 0px);
+  }
+
+  to {
+    clip-path: inset(0px 97% 0px 0px);
+  }
+}
